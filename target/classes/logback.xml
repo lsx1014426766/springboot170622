@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<!-- 直接放在根目录src下 -->
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <!--<layout class="ch.qos.logback.access.PatternLayout">
+            <Pattern>%h %l %u %t \"%r\" %s %b</Pattern>
+        </layout>-->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+   <root level="DEBUG">             
+    <appender-ref ref="STDOUT" />   
+  </root>    
+<!--     <appender-ref ref="STDOUT" />
+ -->
+</configuration>

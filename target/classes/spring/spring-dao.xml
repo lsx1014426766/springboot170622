@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+        http://www.springframework.org/schema/context   
+		http://www.springframework.org/schema/context/spring-context-4.1.xsd">
+    <!--
+    
+    
+    引入db信息配置信息application.properties交由spring管理
+  建库建表差值语句：  schema.sql
+    -->
+    <!-- 引入jdbc配置文件 ，注意这2种方式加载时获取方式不同 -->
+    <!--1 使用下面方法加载属性文件，在web启动时使用现在用下面定义bean的形式
+       這裏从context里获取，依赖于web上下文
+     -->
+    <!-- <context:property-placeholder location="classpath:jdbc.properties"/> -->
+    
+     <!--2 使用下面方法加载属性文件，在junit测试时可用 -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:application.properties,sql/*.sql</value>
+            </list>
+        </property>
+
+    </bean>
+ 
+  
+</beans>

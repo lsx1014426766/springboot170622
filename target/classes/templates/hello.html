@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'Hello, ' + ${name} + '!'" />
+</body>
+</html>
+<!--注意：文件头必须位于第一行顶行写
+There was an unexpected error (type=Internal Server Error, status=500).
+Unsupported entity requested with PUBLICID "null" and SYSTEMID "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd". Make sure a corresponding org.thymeleaf.doctype.resolution.IDocTypeResolutionEntry implementation is provided by you dialect
+ <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd"> -->
